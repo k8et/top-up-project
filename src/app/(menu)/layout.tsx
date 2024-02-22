@@ -2,8 +2,8 @@ import Sidebar from "@/components/ui/Sidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Media Talk",
-  description: "media talk"
+  title: "Payman admin",
+  description: "payman admin"
 };
 
 interface MainLayoutProps {

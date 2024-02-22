@@ -2,14 +2,14 @@ import { UserCreate, UserUpdate } from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
-const randomString = () => Math.random().toString(36).substring(7);
-
-const fakeUserData = Array.from({ length: 40 }, (_, index) => ({
-  name: `User ${index + 1}`,
-  token: randomString(),
-  username: `user_${index + 1}`,
-  id_user: `ID_${index + 1}`
-}));
+const fakeUserData = [
+  {
+    id_user: "user_1",
+    name: "user_1",
+    token: "fqfw11wf",
+    username: "user_1",
+  }
+];
 
 
 const fakeCreateUser = async (payload: any) => {
@@ -24,7 +24,7 @@ const fakeDeleteUser = async (userId: any) => {
   return userId;
 };
 
-export const requestUser = createAsyncThunk("user/request", async (_, { rejectWithValue }) => {
+export const requestUser = createAsyncThunk("user/request", async (_,) => {
   return fakeUserData;
 });
 
@@ -91,14 +91,16 @@ const userSlice = createSlice({
     builder.addCase(updateUser.rejected, setRejected);
     builder.addCase(updateUser.fulfilled, (state: any, { payload }: any) => {
       state.isLoading = false;
-      const index = state.entities.findIndex((f: any) => f?.user_id === payload?.user_id);
+      const index = state.entities.findIndex((f: any) => f?.id_user === payload?.id_user);
       state.entities[index] = { ...state.entities[index], ...payload };
     });
     builder.addCase(deleteUser.pending, setPending);
-    builder.addCase(deleteUser.rejected, setRejected);
+    builder.addCase(deleteUser.rejected, (state, action) => {
+      setRejected(state, action);
+    });
     builder.addCase(deleteUser.fulfilled, (state, { payload }: any) => {
       state.isLoading = false;
-      state.entities = state.entities.filter((f: any) => f?.user_id !== payload);
+      state.entities = state.entities.filter((f: any) => f?.id_user !== payload);
     });
   }
 });

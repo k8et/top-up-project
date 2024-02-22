@@ -20,7 +20,6 @@ function Home() {
   const userList = useSelector(getUserList());
   const { form, handlerChange } = useForm({ data: initialData });
   const { isOpen, handlerToggle, currentData } = useModal();
-
   const filterSearch = form.search
     ? userList.filter((item: any) => item.name.toLowerCase().indexOf(form.search.toLowerCase()) >= 0)
     : userList;

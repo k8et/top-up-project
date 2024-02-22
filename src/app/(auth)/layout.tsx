@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Media Talk | Войти",
+  title: "Peyman admin | Login",
   description: "media talk"
 };
 

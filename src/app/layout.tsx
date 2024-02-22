@@ -1,17 +1,13 @@
 import ReduxProvider from "@/store/ReduxProvider";
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ weight: ["400", "500", "600", "700", "800"], subsets: ["latin"] });
-const manrope = Manrope({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-manrope"
-});
+
 
 export const metadata: Metadata = {
-  title: "Media Talk | Пользователи",
+  title: "Peyman admin",
   description: "media talk"
 };
 

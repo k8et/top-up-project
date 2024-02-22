@@ -56,7 +56,7 @@ const CreateUserModal = () => {
       <ModalWindow isOpen={isOpen} onClickOut={handlerToggle} width={480}>
         <ModalWrapper>
           <div className="flex justify-between items-center">
-            <div>Добавить пользователя</div>
+            <div>Add user</div>
             <button onClick={handlerToggle}>
               <Icon name="close-light" className="w-[32px] h-[32px]" />
             </button>

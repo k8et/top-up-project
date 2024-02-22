@@ -2,12 +2,8 @@
 import Icon from "@/components/common/Icon";
 import NavLinkButton from "@/components/common/button/NavLinkButton";
 import useResize from "@/hooks/useResize";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import UserInfo from "../UserInfo";
-import DeviceModal from "../modal/DeviceModal";
-import SmartModeModal from "../modal/SmartModeModal";
-import TimeInSiteModal from "../modal/TimeSiteModal";
 
 const Sidebar = () => {
   const { isScreenXl } = useResize();

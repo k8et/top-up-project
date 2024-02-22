@@ -50,9 +50,7 @@ const UpdateUserModal = (props: IUpdateUserModalProps) => {
   }
 
   const handlerDelete = () => {
-    console.log(data);
-
-    if (data?.user_id) dispatch(deleteUser(data?.user_id));
+    dispatch(deleteUser(data?.id_user));
     handlerToggle();
   };
 
